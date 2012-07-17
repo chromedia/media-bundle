@@ -1,5 +1,5 @@
 <?php
-namespace Chromedia\MediaBundle;
+namespace Chromedia\Bundle\MediaBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
