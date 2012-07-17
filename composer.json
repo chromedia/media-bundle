@@ -22,11 +22,6 @@
         "knplabs/gaufrette": "*",
         "imagine/Imagine": "*"
     },
-    "require-dev": {
-    },
-    "suggest": {
-        "liip/imagine-bundle": "*",
-    },
     "autoload": {
         "psr-0": { "Chromedia\\Bundle\\MediaBundle": "" }
     },
