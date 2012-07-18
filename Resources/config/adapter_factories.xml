@@ -23,9 +23,6 @@
         <service id="chromedia_gaufrette.adapter.factory.acl_aware_amazon_s3" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\AclAwareAmazonS3AdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
-        <service id="chromedia_gaufrette.adapter.factory.apc" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\ApcAdapterFactory">
-            <tag name="gaufrette.adapter.factory" />
-        </service>
 
     </services>
 
