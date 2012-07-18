@@ -5,23 +5,23 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="chromedia_gaufrette.filesystem" class="Gaufrette\Filesystem" abstract="true">
+        <service id="chromedia_media.filesystem" class="Gaufrette\Filesystem" abstract="true">
             <argument /><!-- The Adapter -->
         </service>
-        <service id="chromedia_gaufrette.adapter.in_memory" class="Gaufrette\Adapter\InMemory" abstract="true" public="false">
+        <service id="chromedia_media.adapter.in_memory" class="Gaufrette\Adapter\InMemory" abstract="true" public="false">
             <argument /><!-- Files -->
         </service>
-        <service id="chromedia_gaufrette.adapter.local" class="Gaufrette\Adapter\Local" abstract="true" public="false">
+        <service id="chromedia_media.adapter.local" class="Gaufrette\Adapter\Local" abstract="true" public="false">
             <argument /><!-- Directory -->
             <argument /><!-- Create -->
         </service>
-        <service id="chromedia_gaufrette.adapter.safe_local" class="Gaufrette\Adapter\SafeLocal" abstract="true" public="false">
+        <service id="chromedia_media.adapter.safe_local" class="Gaufrette\Adapter\SafeLocal" abstract="true" public="false">
             <argument /><!-- Directory -->
             <argument /><!-- Create -->
         </service>
-        <service id="chromedia_gaufrette.adapter.amazon_s3" class="Gaufrette\Adapter\AmazonS3" abstract="true" public="false" />
-        <service id="chromedia_gaufrette.adapter.acl_aware_amazon_s3" class="Gaufrette\Adapter\AclAwareAmazonS3" abstract="true" public="false" />
-        <service id="chromedia_gaufrette.filesystem_map" class="Chromedia\Bundle\GaufretteBundle\FilesystemMap">
+        <service id="chromedia_media.adapter.amazon_s3" class="Gaufrette\Adapter\AmazonS3" abstract="true" public="false" />
+        <service id="chromedia_media.adapter.acl_aware_amazon_s3" class="Gaufrette\Adapter\AclAwareAmazonS3" abstract="true" public="false" />
+        <service id="chromedia_media.filesystem_map" class="Chromedia\Bundle\GaufretteBundle\FilesystemMap">
             <argument /> <!-- map of filesystems -->
         </service>
     </services>
