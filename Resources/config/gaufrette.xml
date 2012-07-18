@@ -21,7 +21,7 @@
         </service>
         <service id="chromedia_gaufrette.adapter.amazon_s3" class="Gaufrette\Adapter\AmazonS3" abstract="true" public="false" />
         <service id="chromedia_gaufrette.adapter.acl_aware_amazon_s3" class="Gaufrette\Adapter\AclAwareAmazonS3" abstract="true" public="false" />
-        <service id="chromedia_gaufrette.filesystem_map" class="Chromedia\Bundle\GaufretteBundle\FilesystemMap">
+        <service id="chromedia_gaufrette.filesystem_map" class="Chromedia\Bundle\MediaBundle\FilesystemMap">
             <argument /> <!-- map of filesystems -->
         </service>
     </services>
