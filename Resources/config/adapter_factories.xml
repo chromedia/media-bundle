@@ -5,25 +5,25 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="chromedia_gaufrette.adapter.factory.in_memory" class="Chromedia\Bundle\GaufretteBundle\DependencyInjection\Factory\InMemoryAdapterFactory">
+        <service id="chromedia_gaufrette.adapter.factory.in_memory" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\InMemoryAdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
-        <service id="chromedia_gaufrette.adapter.factory.service" class="Chromedia\Bundle\GaufretteBundle\DependencyInjection\Factory\ServiceAdapterFactory">
+        <service id="chromedia_gaufrette.adapter.factory.service" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\ServiceAdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
-        <service id="chromedia_gaufrette.adapter.factory.local" class="Chromedia\Bundle\GaufretteBundle\DependencyInjection\Factory\LocalAdapterFactory">
+        <service id="chromedia_gaufrette.adapter.factory.local" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\LocalAdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
-        <service id="chromedia_gaufrette.adapter.factory.safe_local" class="Chromedia\Bundle\GaufretteBundle\DependencyInjection\Factory\SafeLocalAdapterFactory">
+        <service id="chromedia_gaufrette.adapter.factory.safe_local" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\SafeLocalAdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
-        <service id="chromedia_gaufrette.adapter.factory.amazon_s3" class="Chromedia\Bundle\GaufretteBundle\DependencyInjection\Factory\AmazonS3AdapterFactory">
+        <service id="chromedia_gaufrette.adapter.factory.amazon_s3" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\AmazonS3AdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
-        <service id="chromedia_gaufrette.adapter.factory.acl_aware_amazon_s3" class="Chromedia\Bundle\GaufretteBundle\DependencyInjection\Factory\AclAwareAmazonS3AdapterFactory">
+        <service id="chromedia_gaufrette.adapter.factory.acl_aware_amazon_s3" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\AclAwareAmazonS3AdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
-        <service id="chromedia_gaufrette.adapter.factory.apc" class="Chromedia\Bundle\GaufretteBundle\DependencyInjection\Factory\ApcAdapterFactory">
+        <service id="chromedia_gaufrette.adapter.factory.apc" class="Chromedia\Bundle\MediaBundle\DependencyInjection\Factory\ApcAdapterFactory">
             <tag name="gaufrette.adapter.factory" />
         </service>
 
