@@ -1,21 +1,6 @@
 {
 	"name":			"chromedia/media-bundle",
-	"type": 		"symfony-bundle",
 	"description":	"Symfony ChromediaMediaBundle",
-	"keywords":		["media", "youtube", "pdf", "file", "upload"],
-	"homepage":		"http://www.chromedia.com",
-	"license":		"MyLicense",
-	"authors":		[
-		{
-			"name": "Harold Modesto",
-			"email":"harold.modesto@chromedia.com",
-			"homepage": "http://www.chromedia.com"
-		},
-		{
-			"name":     "The contributors",
-			"homepage": "http://www.chromedia.com"
-		}		
-	],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.1.*",
@@ -25,5 +10,5 @@
     "autoload": {
         "psr-0": { "Chromedia\\Bundle\\MediaBundle": "" }
     },
-    "target-dir": "Chromedia/Bundle/MediaBundle"	
+    "target-dir": "Chromedia/Bundle/MediaBundle"
 }
