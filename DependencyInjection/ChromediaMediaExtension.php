@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 /**
  * The Gaufrette DIC extension
  */
-class ChromediaGaufretteExtension extends Extension
+class ChromediaMediaExtension extends Extension
 {
     private $factories = null;
 
