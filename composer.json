@@ -10,5 +10,6 @@
     "autoload": {
         "psr-0": { "Chromedia\\Bundle\\MediaBundle": "" }
     },
-    "target-dir": "Chromedia/Bundle/MediaBundle"
+    "target-dir": "Chromedia/Bundle/MediaBundle",
+    "minimum-stability": "dev"
 }
