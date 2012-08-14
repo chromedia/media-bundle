@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="chromedia_media.manager.class">Chromedia\Bundle\MediaBundle\MediaManager</parameter>
+        <parameter key="chromedia_media.manager.media_group.class">Chromedia\Bundle\MediaBundle\Model\Manager\MediaGroupManager</parameter>
+    </parameters>
+
+    <services>
+        <service id="chromedia_media.manager" class="%chromedia_media.manager.class%">
+            <argument type="service" id="event_dispatcher" />
+        </service>
+        <service id="chromedia_media.manager.media_group" class="%chromedia_media.manager.media_group.class%">
+            <argument type="service" id="chromedia_media.repository.media_group" />
+            <argument type="service" id="chromedia_media.repository.media" />
+        </service>
+    </services>
+
+</container>

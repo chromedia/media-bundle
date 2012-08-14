@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="chromedia_media.provider.abstract.class">Chromedia\Bundle\MediaBundle\Provider\AbstractProvider</parameter>
+        <parameter key="chromedia_media.provider.file.class">Chromedia\Bundle\MediaBundle\Provider\FileProvider</parameter>
+        <parameter key="chromedia_media.provider.image.class">Chromedia\Bundle\MediaBundle\Provider\ImageProvider</parameter>
+        <parameter key="chromedia_media.provider.dailymotion.class">Chromedia\Bundle\MediaBundle\Provider\DailymotionProvider</parameter>
+    </parameters>
+
+    <services>
+        <service id="chromedia_media.provider.abstract" class="%chromedia_media.provider.abstract.class%" abstract="true">
+            <argument>chromedia_media.provider.abstract</argument>
+            <argument />
+            <argument />
+            <argument />
+            <argument />
+        </service>
+
+        <service id="chromedia_media.provider.image" class="%chromedia_media.provider.image.class%" parent="chromedia_media.provider.abstract">
+            <call method="setImageManipulator">
+                <argument />
+            </call>
+        </service>
+
+        <service id="chromedia_media.provider.file" class="%chromedia_media.provider.file.class%" parent="chromedia_media.provider.abstract" />
+
+        <service id="chromedia_media.provider.dailymotion" class="%chromedia_media.provider.dailymotion.class%" parent="chromedia_media.provider.abstract" />
+
+    </services>
+
+</container>

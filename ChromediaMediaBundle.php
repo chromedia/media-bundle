@@ -7,13 +7,15 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class ChromediaMediaBundle extends Bundle 
 {
-//     /**
-//      * {@inheritdoc}
-//      */
-//     public function build(ContainerBuilder $container)
-//     {
-//         $container->addCompilerPass(new AddProviderCompilerPass());
-//     }
+    /**
+      * {@inheritdoc}
+      */
+	//public function build(ContainerBuilder $container)
+	//{
+	//	parent::build($container);
+	//	
+	//	$container->addCompilerPass(new LoadersCompilerPass());
+	//}
 
 //     /**
 //      * {@inheritdoc}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="chromedia_media.filesystem.local.base_path"></parameter>
+        <parameter key="chromedia_media.filesystem.local.create"></parameter>
+
+        <parameter key="chromedia_media.filesystem.rackspace_cloudfiles.username"></parameter>
+        <parameter key="chromedia_media.filesystem.rackspace_cloudfiles.api_key"></parameter>
+        <parameter key="chromedia_media.filesystem.rackspace_cloudfiles.account"></parameter>
+        <parameter key="chromedia_media.filesystem.rackspace_cloudfiles.auth_host"></parameter>
+        <parameter key="chromedia_media.filesystem.rackspace_cloudfiles.container"></parameter>
+        <parameter key="chromedia_media.filesystem.rackspace_cloudfiles.version"></parameter>
+    </parameters>
+
+    <services>
+        <service id="chromedia_media.filesystem.adapter.local" class="Gaufrette\Adapter\Local">
+            <argument>%chromedia_media.filesystem.local.base_path%</argument>
+            <argument>%chromedia_media.filesystem.local.create%</argument>
+        </service>
+        <service id="chromedia_media.filesystem.adapter.ftp" class="Gaufrette\Adapter\Ftp" />
+
+        <service id="chromedia_media.filesystem.local" class="Gaufrette\Filesystem">
+            <argument type="service" id="chromedia_media.filesystem.adapter.local" />
+        </service>
+
+        <service id="chromedia_media.filesystem.ftp" class="Gaufrette\Filesystem">
+            <argument type="service" id="chromedia_media.filesystem.adapter.ftp" />
+        </service>
+
+        <!-- Rackspace Cloudfiles -->
+        <service id="chromedia_media.filesystem.rackspace_cloudfiles.authentication" class="CF_Authentication">
+            <argument>%chromedia_media.filesystem.rackspace_cloudfiles.username%</argument>
+            <argument>%chromedia_media.filesystem.rackspace_cloudfiles.api_key%</argument>
+            <!--<argument>%chromedia_media.filesystem.rackspace_cloudfiles.account%</argument>-->
+            <!--<argument>%chromedia_media.filesystem.rackspace_cloudfiles.auth_host%</argument>-->
+        </service>
+
+        <service id="chromedia_media.filesystem.adapter.rackspace_cloudfiles" class="Chromedia\Bundle\MediaBundle\Gaufrette\Adapter\RackspaceCloudfiles">
+            <argument type="service" id="chromedia_media.filesystem.rackspace_cloudfiles.authentication" />
+            <argument>%chromedia_media.filesystem.rackspace_cloudfiles.container%</argument>
+            <argument>%chromedia_media.filesystem.rackspace_cloudfiles.version%</argument>
+        </service>
+
+        <service id="chromedia_media.filesystem.rackspace_cloudfiles" class="Gaufrette\Filesystem">
+            <argument type="service" id="chromedia_media.filesystem.adapter.rackspace_cloudfiles" />
+        </service>
+    </services>
+
+</container>
